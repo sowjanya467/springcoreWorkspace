@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="helloWorldService" class="com.bridgelabz.annotationBean.HelloWorldService">
+		<property name="name" value="Sowjanya M">
+		</property>
+	</bean>
+	<bean id="studentbean" class="com.bridgelabz.spring.Student">
+		<property name="name" value="Sowjanya M">
+		</property>
+	</bean>
+	<bean id="address" class="com.bridgelabz.DIcObj.Address">
+		<constructor-arg value="Vishakhapatnam"></constructor-arg>
+		<constructor-arg value="AP"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+	<bean id="e" class="com.bridgelabz.DIconstructor.Employee">
+		<constructor-arg value="20" type="int"></constructor-arg>
+		<constructor-arg value="sowji"></constructor-arg>
+	</bean>
+	<bean id="emp" class="com.bridgelabz.DIcObj.Employee">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="so"></constructor-arg>
+		<constructor-arg value="ap"></constructor-arg>
+		<constructor-arg>
+			<ref bean="address" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="persons" class="com.bridgelabz.inheritingBean.PersonDetails">
+		<constructor-arg value="Vizag"></constructor-arg>
+		<constructor-arg value="Andhra Pradesh"></constructor-arg>
+		<constructor-arg value="384822"></constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="person1" class="com.bridgelabz.inheritingBean.Person"
+		autowire="byName">
+		<constructor-arg value="sowji"></constructor-arg>
+		<constructor-arg value="m"></constructor-arg>
+	</bean>
+	<bean>
+		<constructor-arg value="01" type="int"></constructor-arg>
+		<constructor-arg value="SOWJANYA"></constructor-arg>
+		<constructor-arg>
+			<ref bean="address" />
+		</constructor-arg>
+	</bean>
+	<bean id="messagebean" class="com.bridgelabz.scope.Message" scope="prototype">
+	</bean>
+	<bean id="q" class="com.bridgelabz.constructorInjectionUsingList.Question">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="What is java?"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Java is a programming language</value>
+				<value>Java is a Platform</value>
+				<value>Java is an Island</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
